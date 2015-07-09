@@ -8,10 +8,13 @@
  * Controller of the cabinetWebAppApp
  */
 angular.module('cabinetWebAppApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function( $scope, cabinetServices ) {
+
+    $scope.getNodes = function() {
+      cabinetServices.getNodes().success( function(data) {
+        console.log('from controller:');
+        console.log(data);
+      } );
+    };
+
   });
