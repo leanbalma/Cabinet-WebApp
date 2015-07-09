@@ -1,24 +1,66 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<!-- <div class="jumbotron"> -->
+<!--   <h1>'Allo, 'Allo!</h1> -->
+<!--   <p class="lead"> -->
+<!--     <img src="images/yeoman.png" alt="I'm Yeoman"><br> -->
+<!--     Always a pleasure scaffolding your apps. -->
+<!--   </p> -->
+<!--   <p><a class="btn btn&#45;lg btn&#45;success" ng&#45;href="#/">Splendid!<span class="glyphicon glyphicon&#45;ok"></span></a></p> -->
+<!-- </div> -->
+<!--  -->
+<!-- <div class="row marketing"> -->
+<!--   <h4>HTML5 Boilerplate</h4> -->
+<!--   <p> -->
+<!--     HTML5 Boilerplate is a professional front&#45;end template for building fast, robust, and adaptable web apps or sites. -->
+<!--   </p> -->
+<!--  -->
+<!--   <h4>Angular</h4> -->
+<!--   <p> -->
+<!--     AngularJS is a toolset for building the framework most suited to your application development. -->
+<!--   </p> -->
+<!--  -->
+<!--   <h4>Karma</h4> -->
+<!--   <p>Spectacular Test Runner for JavaScript.</p> -->
+<!-- </div> -->
+<div class="row">
+  <div class="col-md-6 col-lg-6">
+    <treecontrol class="tree-classic"
+    tree-model="dataForTheTree"
+    options="treeOptions"
+    on-selection="showSelected(node)"
+    selected-node="node1">
+    employee: {{node.name}} age {{node.age}}
+    </treecontrol>
+  </div>
+  <div class="col-md-6 col-lg-6">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input type="text" class="form-control" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUsername1">Username</label>
+        <input type="text" class="form-control" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputDescription1">Description</label>
+        <textarea class="form-control" rows="5"></textarea>
+      </div>
+      <!-- <div class="form&#45;group"> -->
+      <!--   <label for="exampleInputFile">File input</label> -->
+      <!--   <input type="file" id="exampleInputFile"> -->
+      <!--   <p class="help&#45;block">Example block&#45;level help text here.</p> -->
+      <!-- </div> -->
+      <!-- <div class="checkbox"> -->
+      <!--   <label> -->
+      <!--     <input type="checkbox"> Check me out -->
+      <!--   </label> -->
+      <!-- </div> -->
+      <button type="submit" class="btn btn-default">Edit</button>
+    </form>
+  </div>
   <button ng-click="getNodes()">Get Nodes</button>
 </div>
