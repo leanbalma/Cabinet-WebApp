@@ -12,25 +12,25 @@ angular.module('cabinetWebAppApp')
     // The host where the rest service is.
     var cabinetHost = 'http://localhost:8000';
 
-
-
     return {
       // Returns all nodes.
       getNodes: function() {
         var promise = $http.get(cabinetHost + '/vault/nodes');
-        // .success(function(data) {
-        //   console.log('getNodes success!');
-        //   console.log(data);
-        //   return arrayToTreeData( data );
-        // })
-        // .error( function(error) {
-        //   console.log('getNodes error!');
-        //   console.log(error);
-        // });
         return promise;
       },
+      // Returns the node's data.
       getNodeData: function( nodeSelected ) {
-        var node = nodeSelected.name.replace('/','_');
+        var node = '';
+
+        if( nodeSelected.group ) {
+          // If the node has a group, then ask for group_node-name
+          node = nodeSelected.group + '_' + nodeSelected.name;
+        }
+        else {
+          // If the node has not a group, then ask for name.
+          node = nodeSelected.name;
+        }
+
         var promise = $http.get(cabinetHost + '/vault/nodes/' + node);
         return promise;
       }
