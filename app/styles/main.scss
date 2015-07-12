@@ -1,5 +1,7 @@
 // bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -86,4 +88,13 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.inline {
+    display: inline-block;
+}
+
+.update-button {
+    margin-top: 15px;
+    float: right;
 }

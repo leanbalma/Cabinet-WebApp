@@ -1,24 +1,41 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-  <button ng-click="getNodes()">Get Nodes</button>
+<div class="row">
+  <div class="col-md-6 col-lg-6">
+      <h3 class="inline">Data Tree</h3>
+      <button class="btn btn-default inline update-button" ng-click="getNodes()">Update Tree!</button>
+      <hr>
+    <treecontrol class="tree-classic"
+    tree-model="dataForTheTree"
+    options="treeOptions"
+    on-selection="showSelected(node)"
+    selected-node="node1">
+    <span style="font-size: 15px; line-height: 30px;">{{ node.name }}</span>
+    </treecontrol>
+  </div>
+  <div class="col-md-6 col-lg-6">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input type="text" class="form-control" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUsername1">Username</label>
+        <input type="text" class="form-control" placeholder="Username" ng-model="nodeData.account">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="{{inputType}}" class="form-control" placeholder="Password" ng-model="nodeData.password">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="showPassword" ng-click="showPasswordClicked()"> Show password
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputDescription1">Description</label>
+        <textarea class="form-control" rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn btn-default">Edit</button>
+      <button type="submit" class="btn btn-default">Save</button>
+    </form>
+  </div>
 </div>

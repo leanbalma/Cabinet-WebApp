@@ -15,16 +15,23 @@ angular.module('cabinetWebAppApp')
     return {
       // Returns all nodes.
       getNodes: function() {
-        var promise = $http.get(cabinetHost + '/vault/nodes')
-        .success(function(data) {
-          console.log('getNodes success!');
-          console.log(data);
-          return data;
-        })
-        .error( function(error) {
-          console.log('getNodes error!');
-          console.log(error);
-        });
+        var promise = $http.get(cabinetHost + '/vault/nodes');
+        return promise;
+      },
+      // Returns the node's data.
+      getNodeData: function( nodeSelected ) {
+        var node = '';
+
+        if( nodeSelected.group ) {
+          // If the node has a group, then ask for group_node-name
+          node = nodeSelected.group + '_' + nodeSelected.name;
+        }
+        else {
+          // If the node has not a group, then ask for name.
+          node = nodeSelected.name;
+        }
+
+        var promise = $http.get(cabinetHost + '/vault/nodes/' + node);
         return promise;
       }
     };
