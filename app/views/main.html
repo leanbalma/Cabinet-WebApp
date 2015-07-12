@@ -23,12 +23,15 @@
 <!-- </div> -->
 <div class="row">
   <div class="col-md-6 col-lg-6">
+      <h3 class="inline">Data Tree</h3>
+      <button class="btn btn-default inline update-button" ng-click="getNodes()">Update Tree!</button>
+      <hr>
     <treecontrol class="tree-classic"
     tree-model="dataForTheTree"
     options="treeOptions"
     on-selection="showSelected(node)"
     selected-node="node1">
-    {{ node.name }}
+    <span style="font-size: 15px; line-height: 30px;">{{ node.name }}</span>
     <!-- employee: {{node.name}} age {{node.age}} -->
     </treecontrol>
   </div>
@@ -66,7 +69,7 @@
       <!--   </label> -->
       <!-- </div> -->
       <button type="submit" class="btn btn-default">Edit</button>
+      <button type="submit" class="btn btn-default">Save</button>
     </form>
   </div>
-  <button ng-click="getNodes()">Get Nodes</button>
 </div>
