@@ -28,7 +28,8 @@
     options="treeOptions"
     on-selection="showSelected(node)"
     selected-node="node1">
-    employee: {{node.name}} age {{node.age}}
+    {{ node.name }}
+    <!-- employee: {{node.name}} age {{node.age}} -->
     </treecontrol>
   </div>
   <div class="col-md-6 col-lg-6">
@@ -39,11 +40,16 @@
       </div>
       <div class="form-group">
         <label for="exampleInputUsername1">Username</label>
-        <input type="text" class="form-control" placeholder="Username">
+        <input type="text" class="form-control" placeholder="Username" ng-model="nodeData.account">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="{{inputType}}" class="form-control" placeholder="Password" ng-model="nodeData.password">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="showPassword" ng-click="showPasswordClicked()"> Show password
+        </label>
       </div>
       <div class="form-group">
         <label for="exampleInputDescription1">Description</label>
