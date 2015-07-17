@@ -81,6 +81,15 @@ angular.module('cabinetWebAppApp')
       return outputData;
     }
 
+    function recoverNodeId( node ) {
+      if( node.group === undefined) {
+        return node.name;
+      }
+      else {
+        return node.group + '_' + node.name;
+      }
+    }
+
     // I got the tree component from https://github.com/wix/angular-tree-control
     $scope.treeOptions = {
       nodeChildren: "children",
@@ -100,9 +109,11 @@ angular.module('cabinetWebAppApp')
     // Empty tree as default.
     $scope.dataForTheTree = [];
 
+    var nodeSelected = {};
     $scope.showSelected = function(sel) {
       console.log('slected: ');
       console.log(sel);
+      nodeSelected = sel;
       cabinetServices.getNodeData(sel).success( function(data) {
         console.log('Node data');
         console.log( data );
@@ -126,6 +137,22 @@ angular.module('cabinetWebAppApp')
       else {
         $scope.inputType = 'password';
       }
+    };
+
+    $scope.deleteNode = function(node) {
+      console.log('node to delete:');
+      console.log(node);
+      var nodeToDelete = recoverNodeId( nodeSelected );
+      cabinetServices.deleteNode( nodeToDelete ).success( function(data) {
+        console.log('data deleted');
+        console.log(data);
+      });
+    };
+
+    $scope.saveNode = function( node ) {
+      cabinetServices.addNode( node ).success( function() {
+        console.log('save success');
+      });
     };
 
   });

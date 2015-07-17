@@ -33,6 +33,20 @@ angular.module('cabinetWebAppApp')
 
         var promise = $http.get(cabinetHost + '/vault/nodes/' + node);
         return promise;
+      },
+      // Delete specific node.
+      deleteNode: function( node ) {
+        var promise = $http.delete( cabinetHost + '/vault/nodes/' + node);
+        return promise;
+      },
+      // Add a new node with data.
+      addNode: function( data ) {
+        var node = angular.fromJson( { name: data.group + '/' + data.title, data: 'account: ' + data.account + '\n' + 'password: ' + data.password  } );
+        var promise = $http.post( cabinetHost + '/vault/nodes', node );
+        return promise;
       }
+
     };
+
+
   });
