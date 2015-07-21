@@ -50,6 +50,8 @@ angular.module('cabinetWebAppApp')
         console.log('Node data');
         console.log( data );
         $scope.nodeData = DataParser.handleNodeData( data );
+        $scope.nodeData.group = sel.group;
+        $scope.nodeData.title = sel.name;
       });
     };
 
@@ -84,6 +86,12 @@ angular.module('cabinetWebAppApp')
     $scope.saveNode = function( node ) {
       cabinetServices.addNode( node ).success( function() {
         console.log('save success');
+      });
+    };
+
+    $scope.editNode = function( node ) {
+      cabinetServices.editNode( node ).success( function() {
+        console.log(' edit success');
       });
     };
 
