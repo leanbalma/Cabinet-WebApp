@@ -79,6 +79,5 @@ angular.module('cabinetWebAppApp')
       console.log(outputData);
       return outputData;
     }
-
-  }
+  };
 });

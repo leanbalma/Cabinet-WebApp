@@ -41,15 +41,17 @@
       </div>
     </div>
 
+    <div class="vertical-center">
     <div class="container">
-    <div ng-view=""></div>
+    <div ui-view></div>
     </div>
+  </div>
 
-    <div class="footer">
-      <div class="container">
-        <!-- <p><span class="glyphicon glyphicon&#45;heart"></span> from the Yeoman team</p> -->
-      </div>
-    </div>
+    <!-- <div class="footer"> -->
+    <!--   <div class="container"> -->
+    <!--     <!&#45;&#45; <p><span class="glyphicon glyphicon&#38;#45;heart"></span> from the Yeoman team</p> &#45;&#45;> -->
+    <!--   </div> -->
+    <!-- </div> -->
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -75,6 +77,8 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-tree-control/angular-tree-control.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -84,6 +88,8 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/services/cabinetservices.js"></script>
         <script src="scripts/services/dataparser.js"></script>
+        <script src="scripts/services/loginmodal.js"></script>
+        <script src="scripts/controllers/loginmodal.js"></script>
         <!-- endbuild -->
 </body>
 </html>
