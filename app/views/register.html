@@ -1,0 +1,36 @@
+<h1>Register into Cabinet</h1>
+<hr>
+<br>
+<br>
+<br>
+<form class="form-horizontal" ng-submit="registerUser(user.name, user.email, user.password)">
+  <div class="form-group">
+    <label for="inputName3" class="col-sm-3 control-label">User name</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputName3" ng-model="user.name" placeholder="User name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="inputEmail3" ng-model="user.email" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="inputPassword3" ng-model="user.password" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputRetypePassword3" class="col-sm-3 control-label">Re-type Password</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="inputRetypePassword3" ng-model="user.rPassword" placeholder="Re-type Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default pull-right">Register</button>
+    </div>
+  </div>
+</form>

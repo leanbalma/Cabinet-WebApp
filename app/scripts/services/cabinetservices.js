@@ -46,10 +46,26 @@ angular.module('cabinetWebAppApp')
         return promise;
       },
       editNode: function( data  ) {
-        console.log( data )
+        console.log( data );
         var nodeId = data.group + '_' + data.title;
         var nodeData = angular.fromJson( { data: 'account: ' + data.account + '\n' + 'password: ' + data.password  } );
         var promise = $http.put( cabinetHost + '/vault/nodes/' + nodeId, nodeData );
+        return promise;
+      },
+
+      addUser: function(name, email, password) {
+        console.log('add user');
+        // console.log(data);
+
+        var newUser = angular.fromJson( {
+          'name': name,
+          'email': email,
+          'password': password
+        });
+
+        console.log(newUser);
+
+        var promise = $http.post( cabinetHost + '/vault/users', newUser );
         return promise;
       }
 

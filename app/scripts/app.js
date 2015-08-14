@@ -40,6 +40,14 @@ angular
       data: {
         requireLogin: true
       }
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'views/register.html',
+      controller: 'RegisterCtrl',
+      data: {
+        requireLogin: false
+      }
     });
     // .state('app', {
     //   abstract: true,

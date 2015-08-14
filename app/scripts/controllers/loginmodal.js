@@ -20,4 +20,9 @@ angular.module('cabinetWebAppApp')
        // });
      };
 
+     // $scope.createNewAccount = function() {
+     //   $scope.$close('canceled');
+     //   $state.go('register');
+     // };
+
   });
